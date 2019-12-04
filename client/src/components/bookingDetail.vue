@@ -28,7 +28,7 @@ export default {
         checkInStatus: checkin
       }
       BookingService.updateBooking(updateBooking, this.booking._id)
-      // .then()
+      .then(()=> eventBus.$emit('refresh-data'))
     }
 
   }

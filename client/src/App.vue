@@ -10,9 +10,10 @@
 import BookingsForm from '@/components/bookingsForm.vue';
 import BookingService from '@/services/BookingService.js';
 import BookingsList from '@/components/bookingsList.vue';
-
+import {eventBus} from '@/main.js'
 
 export default {
+
   name: "app",
   data(){
     return{
@@ -24,10 +25,18 @@ export default {
     'bookings-list': BookingsList
   },
   mounted(){
-   BookingService.getBookings().then((bookings)=> this.bookingsData = bookings)
-  }
+   BookingService.getBookings().then((bookings)=> this.bookingsData = bookings),
+   eventBus.$on('refresh-data', ()=>this.fetchdata())
+ },
+ methods:{
+   fetchdata(){
+     BookingService.getBookings().then((bookings)=>this.bookingsData = bookings)
+   }
+ }
 }
 </script>
 
 <style lang="css" scoped>
+
+
 </style>
