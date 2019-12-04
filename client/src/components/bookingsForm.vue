@@ -9,8 +9,8 @@
 
 <label for="CheckedIn">Checked In</label>
 <select  name="" v-model="checkInStatus" required>
-  <option value="True">Yes</option>
-  <option value="False">No</option>
+  <option :value="true">Yes</option>
+  <option :value="false">No</option>
 </select>
 <input type="submit" name="" value="Submit Booking">
 

@@ -16,7 +16,7 @@ db.createCollection("bookings", {
           description: "needs to be a string"
         },
         checkInStatus:{
-          bsonType: "string",
+          bsonType: "bool",
           description: "needs to be a string"
         }
       }
@@ -28,16 +28,16 @@ db.bookings.insertMany([
   {
     name: "Samuel Jackson",
     email: "Samjackson@gmail.com",
-    checkInStatus: "true",
+    checkInStatus: true,
   },
   {
     name: "Marc Davidson",
     email: "mdavidson@gmail.com",
-    checkInStatus: "false",
+    checkInStatus: false,
   },
   {
     name: "Leo Messi",
     email: "Lmessi@gmail.com",
-    checkInStatus: "true",
+    checkInStatus: true,
   }
 ]);
