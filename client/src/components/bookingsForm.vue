@@ -2,13 +2,13 @@
 <form id="bookingsForm" v-on:submit.prevent="handleSubmit">
 
 <label for="name">Name</label>
-<input type="text" name="" value="" v-model="name">
+<input type="text" name="" value="" v-model="name" required>
 
 <label for="email">Email address</label>
-<input type="text" name="" value="" v-model="email">
+<input type="email" name="" value="" v-model="email" required>
 
 <label for="CheckedIn">Checked In</label>
-<select  name="" v-model="checkInStatus">
+<select  name="" v-model="checkInStatus" required>
   <option value="True">Yes</option>
   <option value="False">No</option>
 </select>
